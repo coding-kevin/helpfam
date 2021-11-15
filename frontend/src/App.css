@@ -1,0 +1,66 @@
+/* colors
+2274A5 - star commmand blue
+E7DFC6 - eggshell 
+E9F1F7 - alice blue
+*/
+
+body {
+  background-color: #E9F1F7;
+}
+
+.create-ticket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  
+}
+
+.create-ticket > div {
+  min-width: 50%;
+  max-width: 70%;
+  background-color: #E7DFC6 !important;
+}
+
+
+
+.card.fluid {
+  background-color: #E7DFC6;
+  min-width: 50%;
+}
+
+.ui.segment.centered.form button {
+  background-color: #2274A5;
+  color: white;
+}
+
+.div.extra.content {
+  background-color: #2274A5;
+}
+
+#urgent {
+ border-left: 15px solid yellow;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0 !important;
+}
+
+.categories {
+  justify-content: center;
+  padding-top: 10px;
+  padding-right: 34px;
+  padding-bottom: 10px;
+
+
+}
