@@ -3,9 +3,8 @@ import TicketList from "./screens/TicketList";
 import { CreateTicket } from "./components/CreateTicket";
 import Footer from "./components/Footer";
 import EditTicket from "./components/EditTicket";
-import TicketCard from "./components/TicketCard";
 
-import { Route, Routes, Link, BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (

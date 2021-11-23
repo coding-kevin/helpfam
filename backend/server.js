@@ -44,8 +44,7 @@ app.post("/tickets", (req, res) => {
 });
 
 app.delete("/tickets/:id", async (req, res) => {
-  const id = req.params.id;
-  await Ticket.findByIdAndDelete(id);
+  await Ticket.findByIdAndDelete(req.params.id);
 });
 
 const PORT = process.env.PORT || 4000;
