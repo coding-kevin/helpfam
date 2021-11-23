@@ -5,7 +5,7 @@ E9F1F7 - alice blue
 */
 
 body {
-  background-color: #E9F1F7;
+  background-color: #e9f1f7;
 }
 
 .create-ticket {
@@ -13,33 +13,30 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
-  
 }
 
 .create-ticket > div {
   min-width: 50%;
   max-width: 70%;
-  background-color: #E7DFC6 !important;
+  background-color: #e7dfc6 !important;
 }
 
-
-
 .card.fluid {
-  background-color: #E7DFC6;
+  background-color: #e7dfc6;
   min-width: 50%;
 }
 
 .ui.segment.centered.form button {
-  background-color: #2274A5;
+  background-color: #2274a5;
   color: white;
 }
 
 .div.extra.content {
-  background-color: #2274A5;
+  background-color: #2274a5;
 }
 
 #urgent {
- border-left: 15px solid yellow;
+  border-left: 15px solid yellow;
 }
 
 .visible {
@@ -61,6 +58,4 @@ body {
   padding-top: 10px;
   padding-right: 34px;
   padding-bottom: 10px;
-
-
 }

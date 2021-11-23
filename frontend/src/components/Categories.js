@@ -1,7 +1,5 @@
 import "../App.css";
 
-
-
 const Categories = ({ onFilter }) => {
   return (
     <div>
