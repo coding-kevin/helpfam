@@ -45,7 +45,7 @@ app.post("/tickets", (req, res) => {
 
 app.delete("/tickets/:id", async (req, res) => {
   const id = req.params.id;
-  await connectDB.collection.deleteOne(id);
+  await Ticket.findByIdAndDelete(id);
 });
 
 const PORT = process.env.PORT || 4000;
