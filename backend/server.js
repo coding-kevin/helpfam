@@ -1,8 +1,9 @@
 require("dotenv").config(); // port and mongo URI values
+const cors = require("cors");
 const express = require("express");
+
 const connectDB = require("./db");
 const Ticket = require("./Ticket");
-const cors = require("cors");
 
 const app = express(); // initialize app with express
 
@@ -45,6 +46,12 @@ app.post("/tickets", (req, res) => {
 
 app.delete("/tickets/:id", async (req, res) => {
   await Ticket.findByIdAndDelete(req.params.id);
+});
+
+app.put("/tickets/:id", async (req, res) => {
+  await Ticket.update({ _id: req.params.id }, [
+    { $set: { resolved: { $not: "$resolved" } } }, // set to opposite of boolean value for resolved
+  ]);
 });
 
 const PORT = process.env.PORT || 4000;

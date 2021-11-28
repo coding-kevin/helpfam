@@ -1,6 +1,9 @@
 import "../App.css";
 import DeleteTicket from "./DeleteTicket";
 
+import TicketResolution from "./TicketResolution";
+import ResolveTicket from "./ResolveTicket";
+
 const TicketCard = ({ ticket }) => {
   return (
     <section className="ticket-card-list">
@@ -31,17 +34,17 @@ const TicketCard = ({ ticket }) => {
               </div>
             </div>
             <div className="extra content">
+              <div
+                className={`${
+                  ticket.resolved === true && ticket.resolution === "" // if the ticket is resolved but no resolution is saved yet, show resolution prompt
+                    ? "visible"
+                    : "hidden"
+                }`}
+              >
+                <TicketResolution ticket={ticket} />
+              </div>
+              <ResolveTicket ticket={ticket} />
               <DeleteTicket ticket={ticket} />
-              <i
-                className={`right floated ${
-                  ticket.resolved === true ? "black" : "blue"
-                } pencil icon large`}
-              ></i>
-              <i
-                className={`right floated check circle icon ${
-                  ticket.resolved === true ? "black" : "green"
-                } large`}
-              ></i>
             </div>
           </div>
         </div>

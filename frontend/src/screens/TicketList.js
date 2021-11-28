@@ -10,6 +10,7 @@ const TicketList = () => {
     const fetchItems = async () => {
       const tickets = await getTickets();
       setItems(tickets); // (or await tickets?)
+      console.log(tickets);
     };
     fetchItems();
   }, []);

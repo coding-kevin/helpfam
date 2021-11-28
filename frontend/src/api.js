@@ -14,9 +14,17 @@ export const createTicket = (ticket) =>
 export const deleteTicket = async (id) => {
   await fetch(`http://localhost:4000/tickets/${id}`, {
     method: "DELETE",
+  });
+};
+
+export const resolveTicket = async (ticket) => {
+  const resolution = ticket.resolved;
+  await fetch(`http://localhost:4000/tickets/${ticket._id}`, {
+    method: "PUT",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({ resolution: !resolution }),
   });
 };

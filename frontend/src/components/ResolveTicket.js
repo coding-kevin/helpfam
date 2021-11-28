@@ -1,13 +1,13 @@
 import { deleteTicket } from "../api";
 import { useNavigate } from "react-router-dom";
+import { resolveTicket } from "../api";
 
-const DeleteTicket = ({ ticket }) => {
+const ResolveTicket = ({ ticket }) => {
   // from TicketCard -----^
-  const id = ticket._id;
   const navigate = useNavigate();
 
   const onSubmit = async () => {
-    deleteTicket(id);
+    resolveTicket(ticket);
     navigate(0);
   };
 
@@ -18,10 +18,14 @@ const DeleteTicket = ({ ticket }) => {
         type="submit"
         onClick={() => onSubmit()}
       >
-        <i className="red trash icon large"></i>
+        <i
+          className={`right floated check circle icon ${
+            ticket.resolved === true ? "black" : "green"
+          } large`}
+        ></i>
       </button>
     </div>
   );
 };
 
-export default DeleteTicket;
+export default ResolveTicket;

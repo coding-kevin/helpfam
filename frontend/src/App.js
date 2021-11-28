@@ -2,8 +2,6 @@ import NavBar from "./components/NavBar";
 import TicketList from "./screens/TicketList";
 import { CreateTicket } from "./components/CreateTicket";
 import Footer from "./components/Footer";
-import EditTicket from "./components/EditTicket";
-
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -12,7 +10,6 @@ function App() {
       <NavBar />
       <Routes>
         <Route exact path="/tickets" element={<CreateTicket />} />
-        <Route path="/edit/" element={<EditTicket />} />
       </Routes>
       <TicketList />
       <Footer />
