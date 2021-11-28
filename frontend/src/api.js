@@ -11,8 +11,8 @@ export const createTicket = (ticket) =>
     body: JSON.stringify(ticket),
   });
 
-export const deleteTicket = async (id) => {
-  await fetch(`http://localhost:4000/tickets/${id}`, {
+export const deleteTicket = async (ticket) => {
+  await fetch(`http://localhost:4000/tickets/${ticket._id}`, {
     method: "DELETE",
   });
 };

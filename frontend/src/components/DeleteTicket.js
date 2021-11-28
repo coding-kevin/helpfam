@@ -3,11 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 const DeleteTicket = ({ ticket }) => {
   // from TicketCard -----^
-  const id = ticket._id;
   const navigate = useNavigate();
 
   const onSubmit = async () => {
-    deleteTicket(id);
+    deleteTicket(ticket);
     navigate(0);
   };
 

@@ -22,6 +22,7 @@ const ticketSchema = new Schema({
   resolved: {
     type: Boolean,
     required: false,
+    default: false,
   },
   resolution: {
     type: String,
