@@ -28,7 +28,7 @@ const TicketList = () => {
   return (
     <>
       <div className="categories">
-        <Categories onFilter={filterTickets} />
+        <Categories onFilter={filterTickets} ticket={items} />
       </div>
       <div className="ticket-list">
         {items.map((ticket) => (

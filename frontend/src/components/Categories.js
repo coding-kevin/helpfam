@@ -1,80 +1,39 @@
 import "../App.css";
 
-const Categories = ({ onFilter }) => {
+const Categories = ({ onFilter, ticket }) => {
   return (
-    <div>
-      <div className="ui form ">
-        <div className="inline fields categories ">
-          <div className="ui buttons">
-            <button
-              className="ui button"
-              id="categories"
-              name="categoryRadio"
-              value="All"
-              onClick={(e) => onFilter(e.target.value)}
-              label="All"
-            >
-              All
-            </button>
-
-            <button
-              className="ui button"
-              id="categories"
-              name="categoryRadio"
-              value="Rivka"
-              onClick={(e) => onFilter(e.target.value)}
-              label="Rivka"
-            >
-              Rivka
-            </button>
-
-            <button
-              className="ui button"
-              id="categories"
-              name="categoryRadio"
-              value="Mom"
-              onClick={(e) => onFilter(e.target.value)}
-              label="Mom"
-            >
-              Mom
-            </button>
-
-            <button
-              className="ui button"
-              id="categories"
-              name="categoryRadio"
-              value="Dad"
-              onClick={(e) => onFilter(e.target.value)}
-              label="Dad"
-            >
-              Dad
-            </button>
-
-            <button
-              className="ui button"
-              id="categories"
-              name="categoryRadio"
-              value="Ed"
-              onClick={(e) => onFilter(e.target.value)}
-              label="Ed"
-            >
-              Ed
-            </button>
-
-            <button
-              className="ui button"
-              id="categories"
-              name="categoryRadio"
-              value="Maddie"
-              onClick={(e) => onFilter(e.target.value)}
-              label="Maddie"
-            >
-              Maddie
-            </button>
+    <>
+      <div>
+        <div className={`ui form ${ticket.length > 0 ? "visible" : "hidden"}`}>
+          <div className="inline fields categories ">
+            <div className="ui buttons">
+              <button
+                className="ui button"
+                id="categories"
+                name="categoryRadio"
+                value="All"
+                onClick={(e) => onFilter(e.target.value)}
+                label="All"
+              >
+                All
+              </button>
+              {ticket.map((ticket) => (
+                <button
+                  className="ui button"
+                  id="categories"
+                  name="categoryRadio"
+                  value={"`${ticket.family_member}`"}
+                  onClick={(e) => onFilter(ticket.family_member)}
+                  label={"`${ticket.family_member}`"}
+                >
+                  {ticket.family_member}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
