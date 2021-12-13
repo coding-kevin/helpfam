@@ -18,13 +18,29 @@ export const deleteTicket = async (ticket) => {
 };
 
 export const resolveTicket = async (ticket) => {
-  const resolution = ticket.resolved;
+  const resolved = ticket.resolved;
+  console.log("RESOLVED:", resolved);
+  console.log("TICKET.RESOLVED", ticket.resolved);
   await fetch(`http://localhost:4000/tickets/${ticket._id}`, {
     method: "PUT",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ resolution: !resolution }),
+    body: JSON.stringify({ resolved: !resolved }),
+  });
+};
+
+export const addResolution = async (data, ticket) => {
+  console.log("ticket.resolution", data.resolution);
+  console.log("TICKET ID", ticket._id);
+  console.log("TICKET FAMILY MEMBER", ticket.family_member);
+  await fetch(`http://localhost:4000/tickets/resolve/${ticket._id}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
   });
 };

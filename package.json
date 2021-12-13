@@ -8,8 +8,9 @@
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/dataUploader.js"
+    "concurrently": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/dataUploader.js",
+    "dev": "npm run data:import && npm run concurrently"
   },
   "keywords": [],
   "author": "",

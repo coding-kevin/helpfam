@@ -9,7 +9,7 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route exact path="/tickets" element={<CreateTicket />} />
+        <Route path="/" element={<CreateTicket />} />
       </Routes>
       <TicketList />
       <Footer />

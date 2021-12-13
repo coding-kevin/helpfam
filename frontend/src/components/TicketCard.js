@@ -1,7 +1,7 @@
 import "../App.css";
 import DeleteTicket from "./DeleteTicket";
 
-import TicketResolution from "./TicketResolution";
+import { TicketResolution } from "./TicketResolution";
 import ResolveTicket from "./ResolveTicket";
 
 const TicketCard = ({ ticket }) => {

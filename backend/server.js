@@ -54,5 +54,11 @@ app.put("/tickets/:id", async (req, res) => {
   ]);
 });
 
+app.put("/tickets/resolve/:id", async (req, res) => {
+  await Ticket.update({ _id: req.params.id }, [
+    { $set: { resolution: req.body.resolution } },
+  ]);
+});
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
