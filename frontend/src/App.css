@@ -35,6 +35,13 @@ body {
   background-color: #2274a5;
 }
 
+#resolved-text {
+  font-style: oblique;
+
+  display: inline;
+  padding-left: 5px;
+}
+
 #urgent {
   border-left: 15px solid yellow;
 }
@@ -58,4 +65,31 @@ body {
   padding-top: 10px;
   padding-right: 34px;
   padding-bottom: 10px;
+}
+
+.ticket-list {
+  margin-top: 10px;
+}
+
+/* nav */
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+}
+
+nav > ul {
+  list-style-type: none;
+  font-size: 18px;
+  padding-right: 40px;
+}
+
+.nav-link {
+}
+/* end nav */
+
+.resolution-form {
+  padding-bottom: 15px;
 }

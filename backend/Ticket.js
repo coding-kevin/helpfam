@@ -15,10 +15,10 @@ const ticketSchema = new Schema({
     type: String,
     required: true,
   },
-  urgent: {
-    type: Boolean,
-    required: false,
-  },
+  // urgent: {
+  //   type: Boolean,
+  //   required: false,
+  // },
   resolved: {
     type: Boolean,
     required: false,

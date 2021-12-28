@@ -5,9 +5,14 @@ const DeleteTicket = ({ ticket }) => {
   // from TicketCard -----^
   const navigate = useNavigate();
 
+  // Using async / await below gives errors in Firefox
+  // and Safari but not Chrome. Used setTimeout as stopgap//
+
   const onSubmit = async () => {
     deleteTicket(ticket);
-    navigate(0);
+    setTimeout(() => {
+      navigate(0);
+    }, 500);
   };
 
   return (
@@ -15,6 +20,7 @@ const DeleteTicket = ({ ticket }) => {
       <button
         className="right floated ui basic icon button"
         type="submit"
+        title="Delete ticket"
         onClick={() => onSubmit()}
       >
         <i className="red trash icon large"></i>

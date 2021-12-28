@@ -26,13 +26,15 @@ const TicketList = () => {
 
   return (
     <>
-      <div className="categories">
-        <Categories onFilter={filterTickets} ticket={items} />
-      </div>
+      <Categories onFilter={filterTickets} ticket={items} />
+
       <div className="ticket-list">
-        {items.map((ticket) => (
-          <TicketCard ticket={ticket} key={ticket._id} />
-        ))}
+        {items
+          .slice(0)
+          .reverse()
+          .map((ticket) => (
+            <TicketCard ticket={ticket} key={ticket._id} />
+          ))}
       </div>
     </>
   );

@@ -1,7 +1,6 @@
 import { addResolution } from "../api";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 export const TicketResolution = ({ ticket }) => {
   const navigate = useNavigate();
@@ -10,17 +9,13 @@ export const TicketResolution = ({ ticket }) => {
     addResolution(data, ticket);
     navigate(0);
   });
-  const testButton = async () => {
-    console.log("TICKET ID", ticket._id);
-  };
 
   return (
     <>
-      <section className="create-ticket">
+      <section>
         <div>
-          <form className="ui segment centered form" onSubmit={submitHandler}>
+          <form className="ui form resolution-form" onSubmit={submitHandler}>
             <div className="field">
-              <label>Resolution</label>
               <input
                 type="text"
                 name="resolution"
@@ -29,11 +24,7 @@ export const TicketResolution = ({ ticket }) => {
               />
             </div>
 
-            <button
-              className="ui button"
-              type="submit"
-              onClick={() => testButton()} // NEED TO REMOVE
-            >
+            <button className="ui button" type="submit" title="Save resolution">
               Save
             </button>
           </form>

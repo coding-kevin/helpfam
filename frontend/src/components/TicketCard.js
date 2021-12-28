@@ -16,10 +16,18 @@ const TicketCard = ({ ticket }) => {
           >
             <div
               className="content"
-              id={`${ticket.urgent === true ? "urgent" : ""}`}
+              // id={`${ticket.urgent === true ? "urgent" : ""}`}
             >
               <div className="header">
                 {ticket.title}
+                <p
+                  id="resolved-text"
+                  className={` meta ${
+                    ticket.resolved === true ? "visible" : "hidden"
+                  }`}
+                >
+                  Resolved
+                </p>
                 <div className="right floated meta">{ticket.family_member}</div>
               </div>
 
@@ -28,7 +36,7 @@ const TicketCard = ({ ticket }) => {
               <div className="description">
                 {`${
                   ticket.resolved
-                    ? "Resolved: " + ticket.resolution
+                    ? "Resolution: " + ticket.resolution
                     : ticket.resolution
                 }`}
               </div>

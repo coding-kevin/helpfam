@@ -1,4 +1,3 @@
-import { deleteTicket } from "../api";
 import { useNavigate } from "react-router-dom";
 import { resolveTicket } from "../api";
 
@@ -6,9 +5,14 @@ const ResolveTicket = ({ ticket }) => {
   // from TicketCard -----^
   const navigate = useNavigate();
 
-  const onSubmit = async () => {
+  // Using async / await below gives errors in Firefox
+  // and Safari but not Chrome. Used setTimeout as stopgap//
+
+  const onSubmit = () => {
     resolveTicket(ticket);
-    await navigate(0);
+    setTimeout(() => {
+      navigate(0);
+    }, 500);
   };
 
   return (
@@ -21,6 +25,7 @@ const ResolveTicket = ({ ticket }) => {
         }`}
         type="submit"
         onClick={() => onSubmit()}
+        title="Undo resolution"
       >
         <i
           className={` ${
