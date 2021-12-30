@@ -19,7 +19,6 @@ export const deleteTicket = async (ticket) => {
 
 export const resolveTicket = (ticket) => {
   const resolved = ticket.resolved;
-  console.log("SUCCESS");
   fetch(`http://localhost:4000/tickets/${ticket._id}`, {
     method: "PUT",
     headers: {

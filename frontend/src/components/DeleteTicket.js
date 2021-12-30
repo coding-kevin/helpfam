@@ -6,7 +6,8 @@ const DeleteTicket = ({ ticket }) => {
   const navigate = useNavigate();
 
   // Using async / await below gives errors in Firefox
-  // and Safari but not Chrome. Used setTimeout as stopgap//
+  // and Safari but not Chrome. Used setTimeout as stopgap
+  // until a proper solution can be worked out
 
   const onSubmit = async () => {
     deleteTicket(ticket);
