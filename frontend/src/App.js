@@ -2,13 +2,13 @@ import TicketList from "./screens/TicketList";
 import { CreateTicket } from "./components/CreateTicket";
 import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<CreateTicket />} />
-      </Routes>
+      <Navbar />
+      <CreateTicket />
       <TicketList />
       <Footer />
     </>

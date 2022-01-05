@@ -1,0 +1,12 @@
+Thanks to the following for tutorial used:
+
+MDN
+Reddit
+StackExchange
+MongoDB Docs
+TheFullStackJunkie 
+https://www.youtube.com/watch?v=0divhP3pEsg
+Alvin the Programmer
+https://www.youtube.com/watch?v=lvBH9Hj5gxk
+Maksim Ivanov
+https://www.youtube.com/watch?v=bRRA-SrNyxg

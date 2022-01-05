@@ -13,6 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
+  margin-top: 30px;
 }
 
 .create-ticket > div {
@@ -73,21 +74,89 @@ body {
 
 /* nav */
 
-nav {
+/* Main Nav */
+
+.main-nav {
   display: flex;
-  flex-direction: row;
-  align-items: right;
-  justify-content: right;
+  margin-top: 0;
+  height: auto;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f7bb4b;
+  text-decoration: none;
 }
 
-nav > ul {
-  list-style-type: none;
-  font-size: 18px;
-  padding-right: 40px;
+.nav-items {
+  display: flex;
+  margin-left: auto;
+  text-decoration: none;
 }
 
-.nav-link {
+.nav-items-main {
+  color: #14213d;
+  font-family: "Lato";
 }
+
+.nav-items > a {
+  text-decoration: none;
+  color: #14213d;
+  font-family: "Lato";
+  padding-right: 20px;
+}
+
+.navbar-name {
+  padding-left: 20px;
+}
+
+.navbar-name > a {
+  text-decoration: none;
+  color: #14213d;
+  font-family: "Lato";
+}
+
+.hamburger-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-nav,
+  .nav-items {
+    flex-direction: column;
+  }
+
+  .nav-items-main {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .nav-items {
+    margin-left: 0;
+    display: none;
+    padding-right: 0;
+  }
+
+  .nav-items > a {
+    padding-right: 0px;
+  }
+
+  .hamburger-icon {
+    display: block;
+    justify-self: flex-end;
+    cursor: pointer;
+  }
+
+  .navbar-show {
+    display: flex;
+    align-self: center;
+    text-align: center;
+  }
+}
+
+/* https://www.freecodecamp.org/news/how-to-build-a-responsive-navbar-with-a-toggle-menu-using-flexbox-3438e1d08783/ */
+
+/* END Main Nav */
 /* end nav */
 
 .resolution-form {
