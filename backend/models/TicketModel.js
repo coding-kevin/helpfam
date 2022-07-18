@@ -1,8 +1,8 @@
 //the schema for tickets
 
-const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
 
-const ticketSchema = new Schema({
+const TicketSchema = mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -11,23 +11,22 @@ const ticketSchema = new Schema({
     type: String,
     required: true,
   },
-  family_member: {
+  submittedBy: {
     type: String,
     required: true,
   },
-  // urgent: {
-  //   type: Boolean,
-  //   required: false,
-  // },
+  worknotes: [
+    {
+      type: Object,
+      timestamp: "",
+      worknotes: "",
+      author: "",
+    },
+  ],
   resolved: {
     type: Boolean,
     required: false,
     default: false,
-  },
-  resolution: {
-    type: String,
-    required: false,
-    default: "", // to prevent it showing as undefined
   },
   visible: {
     type: Boolean,
@@ -36,6 +35,6 @@ const ticketSchema = new Schema({
   },
 });
 
-const Ticket = model("ticket", ticketSchema);
+const Ticket = mongoose.model("test ticket", TicketSchema);
 
 module.exports = Ticket;
