@@ -12,11 +12,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://62d6741147c2c26eb2c15203--portfolio-frontend-kevin.netlify.app",
-      "codingkevin.com",
-    ],
+    origin: ["https://kevin-tickets-backend.herokuapp.com", "codingkevin.com"],
     credentials: true,
     methods: ["OPTIONS", "HEAD", "GET", "POST", "PUT", "DELETE"],
   })
