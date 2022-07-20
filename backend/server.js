@@ -10,6 +10,8 @@ const app = express();
 
 connectDB();
 
+//test
+
 app.use(
   cors({
     origin: [
