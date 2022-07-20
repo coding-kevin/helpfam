@@ -6,6 +6,42 @@ E9F1F7 - alice blue
 
 body {
   background-color: #e9f1f7;
+  overflow: scroll; /* This is to prevent the scrollbar from appearing/disappearing based on number of tickets, which causes design to shift horizontally*/
+}
+
+button {
+  margin-bottom: 10px !important;
+}
+
+button > a {
+  text-decoration: none;
+  color: white;
+}
+
+button > a:hover {
+  color: white;
+}
+
+.login-and-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.login-and-register > h2 {
+  padding-top: 20px;
+}
+
+.login-register-information {
+  text-align: center;
+}
+
+.login-register-information > input {
+  margin-left: 20px;
+  margin-right: 5px;
 }
 
 .create-ticket {
@@ -25,10 +61,10 @@ body {
 .card.fluid {
   background-color: #e7dfc6;
   min-width: 50%;
+  margin: 15px;
 }
 
 .ui.segment.centered.form button {
-  background-color: #2274a5;
   color: white;
 }
 
@@ -43,16 +79,12 @@ body {
   padding-left: 5px;
 }
 
-#urgent {
-  border-left: 15px solid yellow;
-}
-
 .visible {
   display: block;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
   visibility: hidden;
   opacity: 0;
   width: 0;
@@ -72,6 +104,52 @@ body {
   margin-top: 10px;
 }
 
+.welcome-text {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.worknote {
+  width: 90%;
+  margin: auto;
+  border: 1px;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.worknotes-container > button {
+  padding-bottom: 5px;
+}
+
+.resolution-form {
+  padding-bottom: 15px;
+}
+
+.resolve,
+.delete {
+  padding-left: 5px;
+}
+
+.guest-account-logins {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .guest-account-logins {
+    flex-direction: column;
+  }
+  .login-button {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  #submit-button {
+    width: 100%;
+  }
+}
 /* nav */
 
 /* Main Nav */
@@ -154,11 +232,26 @@ body {
   }
 }
 
-/* https://www.freecodecamp.org/news/how-to-build-a-responsive-navbar-with-a-toggle-menu-using-flexbox-3438e1d08783/ */
+.local-nav-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 5px;
+}
+
+.navbar-name.button > a {
+  color: white;
+}
+
+.local-nav-logout {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  width: 100%;
+  padding-top: 5px;
+  padding-right: 40px;
+}
 
 /* END Main Nav */
 /* end nav */
-
-.resolution-form {
-  padding-bottom: 15px;
-}

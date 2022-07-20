@@ -1,41 +1,102 @@
-import { useState, useEffect } from "react";
-import { getTickets } from "../api";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getTickets, reset } from "../features/tickets/ticketsSlice";
+import { TicketForm } from "./CreateTicketForm";
+import { useNavigate } from "react-router-dom";
+import { filterTickets } from "../features/auth/authSlice";
 import TicketCard from "../components/TicketCard";
-import Categories from "../components/Categories";
+import FilterByUser from "../components/FilterByUser";
 
 const TicketList = () => {
-  const [items, setItems] = useState([]);
+  const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { ticketList, isError, message } = useSelector(
+    (state) => state.tickets
+  );
+
+  const onFilter = (selectedCategory) => {
+    dispatch(filterTickets(selectedCategory));
+  };
 
   useEffect(() => {
-    const fetchItems = async () => {
-      const tickets = await getTickets();
-      setItems(tickets); // (or await tickets?)
-    };
-    fetchItems();
-  }, []);
+    if (isError) {
+      console.log("ERROR displaying tickets");
+      throw new Error(message);
+    }
 
-  const filterTickets = (selectedCategory) => {
-    setItems(
-      items.map((ticket) =>
-        ticket.family_member === selectedCategory || selectedCategory === "All"
-          ? { ...ticket, visible: true }
-          : { ...ticket, visible: false }
-      )
-    );
-  };
+    if (user) {
+      navigate("/tickets");
+      dispatch(getTickets());
+    }
+
+    if (!user) {
+      navigate("/users/login");
+    }
+    return () => {
+      dispatch(reset);
+    };
+  }, [user, navigate, isError, message, dispatch]);
 
   return (
     <>
-      <Categories onFilter={filterTickets} ticket={items} />
+      {user ? (
+        <>
+          {user.userType === "Admin" ? (
+            <>
+              <TicketForm />
+              <div className="ticket-List">
+                {ticketList.length > 0 ? (
+                  <h3 className="welcome-text">
+                    Hello {user.name}. Submitted tickets are below.
+                  </h3>
+                ) : (
+                  <h3 className="welcome-text">
+                    Hello {user.name}. There are no submitted tickets to show.
+                  </h3>
+                )}
 
-      <div className="ticket-list">
-        {items
-          .slice(0)
-          .reverse()
-          .map((ticket) => (
-            <TicketCard ticket={ticket} key={ticket._id} />
-          ))}
-      </div>
+                <FilterByUser ticket={ticketList} onFilter={onFilter} />
+                <div className="ticket-list">
+                  {ticketList
+                    .slice(0)
+                    .reverse()
+                    .map((ticket) => (
+                      <TicketCard ticket={ticket} key={ticket._id} />
+                    ))}
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <TicketForm />
+              <div className="ticket-list">
+                {ticketList.length > 0 ? (
+                  <h3 className="welcome-text">
+                    Hello {user.name}. Your tickets are below.
+                  </h3>
+                ) : (
+                  <h3 className="welcome-text">
+                    Hello {user.name}. You haven't submitted any tickets yet.
+                    Tickets created above will be listed below.
+                  </h3>
+                )}
+                <div>
+                  {ticketList
+                    .slice(0)
+                    .reverse()
+                    .map((ticket) => (
+                      <TicketCard ticket={ticket} key={ticket._id} />
+                    ))}
+                </div>
+              </div>
+            </>
+          )}
+        </>
+      ) : (
+        navigate("/users/login")
+      )}
     </>
   );
 };

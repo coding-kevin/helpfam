@@ -1,11 +1,12 @@
+const path = require("path");
 require("dotenv").config();
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true, // to avoid bugs/error regarding the old URL string parser
-      useUnifiedTopology: true, // https://mongodb.github.io/node-mongodb-native/3.3/reference/unified-topology/
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
     console.log("MongoDB connected");
   } catch (error) {
