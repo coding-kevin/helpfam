@@ -6,16 +6,20 @@ const Navbar = () => {
       <nav className="main-nav">
         <div className="nav-items-main">
           <div className="navbar-name">
-            <a href="../../../../index.html">KEVIN MCLAUGHLIN</a>
+            <a href="https://www.codingkevin.com">KEVIN MCLAUGHLIN</a>
           </div>
           <div className="hamburger-icon">
             <img src="../hamburger.png"></img>
           </div>
         </div>
         <div className="nav-items">
-          <a href="./index.html">Tickets</a>
-          <a href="../../../../diagrams/index.html">Diagrams</a>
-          <a href="../../../../reading_levels/index.html">Reading Levels</a>
+          <a href="https://kevin-tickets-backend.herokuapp.com/users/login">
+            Tickets
+          </a>
+          <a href="https://www.codingkevin.com/diagrams/index.html">Diagrams</a>
+          <a href="https://www.codingkevin.com/reading_levels/reading-levels.html">
+            Reading Levels
+          </a>
         </div>
       </nav>
     </div>
