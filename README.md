@@ -19,3 +19,9 @@ Separate guest accounts are made available for both customer and admin users. Re
 ## Authentication
 
 Accounts are authenticated with JSON Web Tokens and bcrypt. The passwords are salted and hashed with bcrypt and then signed using a JWT secret.
+
+## Known Issues and Next Steps
+
+Need 'incorrect user/password' alert in login form
+
+Improvements to scalability, especially the filter buttons.
