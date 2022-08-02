@@ -15,11 +15,8 @@ const getTickets = asyncHandler(async (req, res) => {
     res.status(200).json(tickets);
   } else if (req.user.userType === "Admin") {
     const tickets = await Ticket.find();
-    if (!tickets) {
-      throw new Error("No tickets found");
-    } else {
-      res.status(200).json(tickets);
-    }
+
+    res.status(200).json(tickets);
   }
 });
 
