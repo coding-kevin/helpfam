@@ -137,6 +137,14 @@ button > a:hover {
   margin: auto;
 }
 
+.not-found-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+}
+
 @media only screen and (max-width: 768px) {
   .guest-account-logins {
     flex-direction: column;

@@ -22,7 +22,7 @@ function App() {
           <Route path="/tickets/create" element={<TicketForm />} />
           <Route path="/users/login" element={<LoginForm />} />
           <Route path="/users/register" element={<RegisterForm />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </Router>
       <ToastContainer />
