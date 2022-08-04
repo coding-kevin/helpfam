@@ -57,7 +57,7 @@ export const LoginForm = () => {
       <div className="ui raised segment form centered">
         <div>
           <div>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <h1>Log In</h1>
               <div className="field">
                 <label>Email</label>
@@ -80,11 +80,7 @@ export const LoginForm = () => {
                 {errors.password && <span>This field is required</span>}
               </div>
 
-              <button
-                className=" green fluid ui button"
-                type="submit"
-                onSubmit={handleSubmit(onSubmit)}
-              >
+              <button className=" green fluid ui button" type="submit">
                 Log In
               </button>
             </form>
