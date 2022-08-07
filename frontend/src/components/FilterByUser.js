@@ -1,8 +1,6 @@
 import "../App.css";
 
 const FilterByUser = ({ onFilter, ticket }) => {
-  //This creates the ticket filter section
-
   let allUsers = ticket.map((ticket) => ticket.submittedBy);
 
   let uniqueUsers = [...new Set(allUsers)];
@@ -15,7 +13,7 @@ const FilterByUser = ({ onFilter, ticket }) => {
 
   return (
     <>
-      <div>
+      <div data-testid="user-filter">
         <div
           className={`centered ui grid ${
             ticket.length > 0 ? "visible" : "hidden"
