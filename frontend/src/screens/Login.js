@@ -16,7 +16,7 @@ export const LoginForm = () => {
   } = useForm({});
   const onSubmit = (data, e) => {
     e.preventDefault();
-    console.log(data);
+
     dispatch(loginSlice(data));
   };
 

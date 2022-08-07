@@ -52,17 +52,12 @@ const registerUser = asyncHandler(async (req, res) => {
 // User login
 
 const loginUser = asyncHandler(async (req, res) => {
-  console.log("LOGIN");
-  console.log("REQ BODY", req.body);
-
   const { email, password } = req.body;
-  console.log("EMAIL, PASSWORD", email, password);
 
   const user = await User.findOne({ email });
 
   // use bcrypt.compare to compare provided password and hashed password
   if (user && (await bcrypt.compare(password, user.password))) {
-    console.log("login successful");
     res.json({
       _id: user.id,
       name: user.name,
@@ -72,7 +67,7 @@ const loginUser = asyncHandler(async (req, res) => {
     });
   } else {
     res.status(400);
-    console.log("error logging in");
+
     throw new Error("Username or password not correct");
   }
 });

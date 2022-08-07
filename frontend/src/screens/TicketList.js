@@ -22,7 +22,6 @@ const TicketList = () => {
 
   useEffect(() => {
     if (isError) {
-      console.log("ERROR displaying tickets");
       throw new Error(message);
     }
 
