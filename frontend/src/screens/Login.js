@@ -29,7 +29,7 @@ export const LoginForm = () => {
 
   useEffect(() => {
     if (isError) {
-      toast.error(message);
+      toast.error("Could not log in. Please check login details.");
     }
 
     if (isSuccess || user) {

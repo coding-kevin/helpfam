@@ -30,7 +30,9 @@ export const RegisterForm = () => {
 
   useEffect(() => {
     if (isError) {
-      toast.error(message);
+      toast.error(
+        "Something went wrong. Please confirm all details. If problem persists, please try again in a few minutes."
+      );
     }
 
     if (isSuccess || user) {
