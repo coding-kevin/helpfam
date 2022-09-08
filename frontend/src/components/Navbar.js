@@ -1,6 +1,12 @@
-import React from "react";
+import { useState } from "react";
+import Hamburger from "../hamburger.png";
 
 const Navbar = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const toggleNav = () => {
+    setToggleMenu(!toggleMenu);
+  };
+
   return (
     <div>
       <nav className="main-nav" data-testid="navbar">
@@ -9,10 +15,12 @@ const Navbar = () => {
             <a href="https://www.codingkevin.com">KEVIN MCLAUGHLIN</a>
           </div>
           <div className="hamburger-icon">
-            <img src="../hamburger.png"></img>
+            <button onClick={toggleNav}>
+              <img src={Hamburger}></img>
+            </button>
           </div>
         </div>
-        <div className="nav-items">
+        <div className={`nav-items ${toggleMenu ? "navbar-show" : "navitems"}`}>
           <a href="https://kevin-tickets-backend.herokuapp.com/users/login">
             Tickets
           </a>
