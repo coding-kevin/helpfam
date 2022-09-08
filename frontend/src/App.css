@@ -201,7 +201,7 @@ button > a:hover {
   font-family: "Lato";
 }
 
-.hamburger-icon {
+#hamburger {
   display: none;
 }
 
@@ -227,7 +227,7 @@ button > a:hover {
     padding-right: 0px;
   }
 
-  .hamburger-icon {
+  #hamburger {
     display: block;
     justify-self: flex-end;
     cursor: pointer;

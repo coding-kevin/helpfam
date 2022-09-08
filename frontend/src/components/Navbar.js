@@ -14,11 +14,7 @@ const Navbar = () => {
           <div className="navbar-name">
             <a href="https://www.codingkevin.com">KEVIN MCLAUGHLIN</a>
           </div>
-          <div className="hamburger-icon">
-            <button onClick={toggleNav}>
-              <img src={Hamburger}></img>
-            </button>
-          </div>
+          <i id="hamburger" className=" bars icon" onClick={toggleNav}></i>
         </div>
         <div className={`nav-items ${toggleMenu ? "navbar-show" : "navitems"}`}>
           <a href="https://kevin-tickets-backend.herokuapp.com/users/login">
