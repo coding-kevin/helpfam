@@ -22,6 +22,6 @@ Accounts are authenticated with JSON Web Tokens and bcrypt. The passwords are sa
 
 ## Known Issues and Next Steps
 
-Need 'incorrect user/password' alert in login form
+Adding more tests
 
 Improvements to scalability, especially the filter buttons.
