@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Hamburger from "../hamburger.png";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
