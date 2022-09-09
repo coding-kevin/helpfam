@@ -30,6 +30,6 @@ test("should render user filter", () => {
   ];
 
   render(<FilterByUser ticket={ticket} />);
-  const navbar = screen.getByTestId("user-filter");
-  expect(navbar).toBeInTheDocument;
+  const filterByUser = screen.getByTestId("user-filter");
+  expect(filterByUser).toBeInTheDocument;
 });
