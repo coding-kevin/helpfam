@@ -37,8 +37,8 @@ describe("JWT", () => {
     })
       .its("body")
       .should("contains", {
-        name: "Cy_User",
-        email: "Cy_User",
+        name: Cypress.env("userName"),
+        email: Cypress.env("userName"),
         userType: "Admin",
       });
   });
